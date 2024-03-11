@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="base.html" >
+    <h1>Confirm Exclusion</h1>
+    <p>Confirm Do you have certain that wat to exclude the client "{{client.name}}"</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, exclude</button>
+        <a href="{% url 'list_clients' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
