@@ -21,5 +21,6 @@ from django.shortcuts import redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clients/', include('members.urls')),
+    path('colaborators/', include('colaborators.urls'), name="colaborators"),
     path('', lambda request: redirect('list_client'), name="home")
 ]

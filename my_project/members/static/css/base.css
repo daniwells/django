@@ -1,0 +1,39 @@
+/* #dropdown{
+    display: none;
+}
+
+@media screen and (max-width: 990px){
+    #navbar{
+        display: none;
+    }
+    #dropdown{
+        display: inline;
+    }
+} */
+
+#navbarNav{
+    padding: 2px;
+    margin: auto;
+}
+
+#dropdown{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.li_nav{
+    margin-inline: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding-inline: 15px;
+    padding-block: 5px;
+    cursor: pointer;
+}
+
+.li_nav:hover{
+    background-color: rgb(238, 238, 238);
+}

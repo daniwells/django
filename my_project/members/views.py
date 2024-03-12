@@ -17,12 +17,10 @@ def make_client(request):
     print(request.method)
     if request.method == 'POST':
         form = ClientForm(request.POST)
-        print("OPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         if form.is_valid():
             form.save()
             return redirect('list_client')
     else:
-        print("BANANAAAAAAAAAAAAAAAAAAAAAAAAAA")
         form = ClientForm()
     return render(request, 'clients/make_client.html', {'form': form})
         
