@@ -1,5 +1,11 @@
-/* #dropdown{
+/* body{
+    background-color: black;
+} */
+
+#dropdown{
     display: none;
+    margin-right: 100%;
+    margin-left: 40px;
 }
 
 @media screen and (max-width: 990px){
@@ -7,21 +13,13 @@
         display: none;
     }
     #dropdown{
-        display: inline;
+        display: flex;
     }
-} */
+}
 
 #navbarNav{
     padding: 2px;
     margin: auto;
-}
-
-#dropdown{
-    text-align: center;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .li_nav{
@@ -34,6 +32,10 @@
     cursor: pointer;
 }
 
-.li_nav:hover{
-    background-color: rgb(238, 238, 238);
+.li_nav:hover, .nav-link:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+.nav-link{
+    padding: 10px;
 }

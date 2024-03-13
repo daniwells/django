@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container">
     <h1>List of colaborators</h1>
-    {% comment %} <table class="table table-striped">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>ID</th>
@@ -14,21 +14,23 @@
             </tr>
         </thead>
         <tbody>
-            {% for client in clients %}
+            {% for colaborator in colaborators %}
             <tr>
-                <td>{{ client.id }}</td>
-                <td>{{ client.name }}</td>
-                <td>{{ client.address }}</td>
-                <td>{{ client.cpf }}</td>
-                <td>{{ client.date_birth }}</td>
+                <td>{{ colaborator.id }}</td>
+                <td>{{ colaborator.full_name }}</td>
+                <td>{{ colaborator.responsibillity }}</td>
+                <td>{{ colaborator.sector }}</td>
+                <td>{{ colaborator.address }}</td>
+                <td>{{ colaborator.schedule_work }}</td>
+                <td>{{ colaborator.date_admission }}</td>
                 <td>
-                    <a href="{% url 'edit_client' client.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'delete_client' client.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'colaborators:edit_colaborator' colaborator.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'colaborators:delete_colaborator' colaborator.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
-    </table> {% endcomment %}
-    {% comment %} <a href="{% url 'make_client' %}" class="btn btn-success">New Client</a> {% endcomment %}
+    </table>
+    <a href="{% url 'colaborators:make_colaborator' %}" class="btn btn-success">New Colaborator</a>
 </div>
 {% endblock %}

@@ -22,13 +22,13 @@
                 <td>{{ client.cpf }}</td>
                 <td>{{ client.date_birth }}</td>
                 <td>
-                    <a href="{% url 'edit_client' client.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'delete_client' client.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'clients:edit_client' client.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'clients:delete_client' client.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'make_client' %}" class="btn btn-success">New Client</a>
+    <a href="{% url 'clients:make_client' %}" class="btn btn-success">New Client</a>
 </div>
 {% endblock %}

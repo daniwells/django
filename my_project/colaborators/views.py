@@ -6,32 +6,30 @@ def show_colaborators(request):
     colaborators = Colaborator.objects.all()
     return render(request, 'colaborators/show_colaborators.html', {'colaborators': colaborators})
 
+def make_colaborator(request):
+    if request.method == 'POST':
+        form = ColaboratorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('colaborators:show_colaborators')
+    else:
+        form = ColaboratorForm()
+    return render(request, 'colaborators/make_colaborator.html', {'form': form})
 
+def edit_colaborator(request, pk):
+    cliente = get_object_or_404(Colaborator, pk=pk)
+    if request.method == 'POST':
+        form = ColaboratorForm(request.POST, instance=cliente)
+        if form.is_valid():
+            form.save()
+            return redirect('colaborators:show_colaborators')
+    else:
+        form = ColaboratorForm(instance=cliente)
+    return render(request, 'colaborators/edit_colaborator.html', {'form': form})
 
-# def cria_cliente(request):
-#     if request.method == 'POST':
-#         form = ClienteForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('lista_clientes')
-#     else:
-#         form = ClienteForm()
-#     return render(request, 'clientes/cria_cliente.html', {'form': form})
-
-# def edita_cliente(request, pk):
-#     cliente = get_object_or_404(Cliente, pk=pk)
-#     if request.method == 'POST':
-#         form = ClienteForm(request.POST, instance=cliente)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('lista_clientes')
-#     else:
-#         form = ClienteForm(instance=cliente)
-#     return render(request, 'clientes/edita_cliente.html', {'form': form})
-
-# def deleta_cliente(request, pk):
-#     cliente = get_object_or_404(Cliente, pk=pk)
-#     cliente.delete()
-#     return redirect('lista_clientes')
+def delete_colaborator(request, pk):
+    cliente = get_object_or_404(Colaborator, pk=pk)
+    cliente.delete()
+    return redirect('colaborators:show_colaborators')
 
 
