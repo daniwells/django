@@ -4,7 +4,46 @@
     <h1>Edit client</h1>
     <form method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+        <div class="row py-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="id_nome_completo">Full Name:</label>
+                    <input type="text" class="form-control" id="id_nome_completo" name="nome_completo" placeholder="Nome Completo" style="width: 600px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_edv">EDV:</label>
+                    <input type="text" class="form-control" id="id_edv" name="edv" placeholder="EDV" style="width: 600px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_cargo">Cargo:</label>
+                    <input type="text" class="form-control" id="id_cargo" name="cargo" placeholder="Cargo" style="width: 600px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_setor">Setor:</label>
+                    <input type="text" class="form-control" id="id_setor" name="setor" placeholder="Setor" style="width: 600px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_endereco">Endereço:</label>
+                    <input type="text" class="form-control" id="id_endereco" name="endereco" placeholder="Endereço" style="width: 600px;" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="id_horario_entrada">Horário de Entrada:</label>
+                    <input type="text" class="form-control" id="id_horario_entrada" name="horario_entrada" placeholder="Horário de Entrada" style="width: 200px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_horario_saida">Horário de Saída:</label>
+                    <input type="text" class="form-control" id="id_horario_saida" name="horario_saida" placeholder="Horário de Saída" style="width: 200px;" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_data_admissao">Data de Admissão:</label>
+                    <input type="date" class="form-control" id="id_data_admissao" name="data_admissao" style="width: 200px;" required>
+                </div>
+            </div>
+        </div>
+        
         <button type="submit" class="btn btn-primary">Save</button>
         <a href="{% url 'colaborators:show_colaborators' %}" class="btn btn-secondary">Cancel</a>
     </form>

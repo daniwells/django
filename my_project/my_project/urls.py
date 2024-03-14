@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('clients/', include('members.urls'), name="clients"),
     path('colaborators/', include('colaborators.urls'), name="colaborators"),
     path('', lambda request: redirect('clients:list_client'), name="home")
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

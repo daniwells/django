@@ -9,7 +9,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.0/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/5.0/ref/settings/
+https://docs.djangoprdefinitionoject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
