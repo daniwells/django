@@ -6,48 +6,15 @@
         {% csrf_token %}
         {% comment %} {{ form.as_p }} {% endcomment %}
         <input type="hidden" name="csrfmiddlewaretoken" value="OSISvdPWjtWCubSWNlPpPMtEBBOaUZtyvMJtQQ0b8s0TH7IE6KZUYfu0b2gHHFHR">
-        <div class="row py-4">
-            <div class="col">
-                <div class="form-group">
-                    <label for="full_name">Full Name:</label>
-                    <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" style="width: 600px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="EDV">EDV:</label>
-                    <input type="text" class="form-control" id="id_edv" name="EDV" placeholder="EDV" style="width: 600px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="responsibillity">Responsibility:</label>
-                    <input type="text" class="form-control" id="responsibillity" name="responsibillity" placeholder="Responsibillity" style="width: 600px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="sector">Sector:</label>
-                    <input type="text" class="form-control" id="sector" name="sector" placeholder="Sector" style="width: 600px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Address" style="width: 600px;" required>
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="schedule_work">Schedule:</label>
-                    <input type="text" class="form-control" id="schedule_work" name="schedule_work" placeholder="Horário de Saída" style="width: 200px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="date_admission">Date of adminission:</label>
-                    <input type="date" class="form-control" id="date_admission" name="date_admission" style="width: 200px;" required>
-                </div>
-                <div class="form-group">
-                    <label for="perfil_image">Enter your perfil image:</label>
-                    <input type="file" class="form-control" id="perfil_image" name="perfil_image" style="width: 200px;" required>
-                </div>
-            </div>
-
-        </div>
-          
+    
         <button type="submit" class="btn btn-primary">Save</button>
         <a href="{% url 'colaborators:show_colaborators' %}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 {% endblock %}
+
+{% comment %} <div class="form-group py-2">
+                    <label for="perfil_image">Enter your perfil photo:</label>
+                    <input type="file" class="form-control" id="perfil_image" name="perfil_image" style="width: 200px;" required>
+                </div> {% endcomment %}
+

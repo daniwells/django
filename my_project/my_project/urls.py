@@ -24,5 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('clients/', include('members.urls'), name="clients"),
     path('colaborators/', include('colaborators.urls'), name="colaborators"),
-    path('', lambda request: redirect('clients:list_client'), name="home")
+    path('', lambda request: redirect('clients:list_client'), name="home"),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

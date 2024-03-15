@@ -10,7 +10,9 @@
 
 body{
     height: 100vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 footer, header{
@@ -18,16 +20,16 @@ footer, header{
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
     width: 100%;
     padding: 50px;
+    margin-top: 200px;
 }
 
 #dropdown{
     display: none;
     margin-right: 100%;
     margin-left: 40px;
+    opacity: 0%;
 }
 
 @media screen and (max-width: 990px){
@@ -69,7 +71,6 @@ main#base_principal{
 .nav-link{
     padding: 10px;
 }
-
 
 #menu_hamburguer{
     border: none;
