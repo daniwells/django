@@ -6,9 +6,9 @@ class Colaborator(models.Model):
     responsibillity = models.CharField(max_length=100)
     sector = models.CharField(max_length=100)
     address = models.TextField()
-    schedule_work = models.TimeField()
-    date_start = models.DateField()
-    date_end = models.DateField()
+    date_admission = models.DateField()
+    schedule_start = models.TimeField()
+    schedule_end = models.TimeField()
     perfil_image = models.CharField(max_length=100)
 
     def __str__(self):
