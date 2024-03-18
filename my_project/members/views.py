@@ -13,7 +13,7 @@ def list_client(request):
     clients = Client.objects.all()
     return render(request, 'clients/list_client.html', {'clients':clients})
 
-def make_client(request):
+def register_client(request):
     if request.method == 'POST':
         form = ClientForm(request.POST)
         if form.is_valid():
@@ -21,7 +21,7 @@ def make_client(request):
             return redirect('clients:list_client')
     else:
         form = ClientForm()
-    return render(request, 'clients/make_client.html', {'form': form})
+    return render(request, 'clients/register_client.html', {'form': form})
         
 def edit_client(request, pk):
     client = get_object_or_404(Client, pk=pk)

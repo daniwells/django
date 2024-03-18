@@ -9,7 +9,6 @@
 }
 
 body{
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,6 +46,7 @@ footer{
 
 main#base_principal{
     margin-top: 120px;
+    min-height: 50vh;
 }
 
 #navbarNav{
