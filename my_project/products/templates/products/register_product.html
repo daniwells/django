@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Register a New Product</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} 
+        <button type="submit" class="btn btn-primary">Save</button>
+        {% comment %} <a href="{% url 'clients:list_client' %}" class="btn btn-secondary">Cancel</a> {% endcomment %}
+    </form>
+</div>
+    
+{% comment %} <script>
+    let perfil_photo_input = document.querySelector("#id_perfil_image")
+    perfil_photo_input.addEventListener("change", (event) => {
+        let image_visualization = document.querySelector('#image_visualization')
+        let file = event.target.files[0]
+
+        var reader = new FileReader();
+        reader.onload = () => {
+            var imageDataUrl = reader.result;
+            console.log('URL de dados da imagem:', imageDataUrl);
+            image_visualization.src = imageDataUrl
+            image_visualization.style.display = 'block'
+        };
+        reader.readAsDataURL(file);
+    })
+</script> {% endcomment %}
+{% endblock %}
+

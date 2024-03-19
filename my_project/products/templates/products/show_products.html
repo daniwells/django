@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>List of Products</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>CPF</th>
+                <th>Date of Birth</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ colaborator.id }}</td>
+                <td>{{ colaborator.full_name }}</td>
+                <td>{{ colaborator.responsibillity }}</td>
+                <td>{{ colaborator.sector }}</td>
+                <td>{{ colaborator.address }}</td>
+                <td>{{ colaborator.schedule_work }}</td>
+                <td>{{ colaborator.date_start }}</td>
+                <td>
+                    <a href="{% url 'colaborators:edit_colaborator' colaborator.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'colaborators:delete_colaborator' colaborator.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'colaborators:register_colaborator' %}" class="btn btn-success">New Colaborator</a>
+</div>
+{% endblock %}
