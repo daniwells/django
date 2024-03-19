@@ -6,6 +6,7 @@ import copy
 import os
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 
 
 def show_colaborators(request):
@@ -16,6 +17,9 @@ def show_colaborators(request):
 def register_colaborator(request):
     if request.method == 'POST':
         
+        file = request.FILES.get("perfil_image")
+        img = Image.open(file)
+        path = os.path.join(settings.BASE_DIR, f"media/{file.name}")
         file = request.FILES.get("perfil_image")
         img = Image.open(file)
         path = os.path.join(settings.BASE_DIR, f"media/{file.name}")
@@ -32,6 +36,7 @@ def register_colaborator(request):
         return redirect('colaborators:show_colaborators')
     else:
         form = ColaboratorForm()
+    return render(request, 'colaborators/register_colaborator.html', {'form': form})
     return render(request, 'colaborators/register_colaborator.html', {'form': form})
 
 def edit_colaborator(request, pk):
