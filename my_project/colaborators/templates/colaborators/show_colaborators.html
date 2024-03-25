@@ -5,24 +5,27 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>EDV</th>
                 <th>Name</th>
+                <th>Responsibillity</th>
+                <th>Sector</th>
                 <th>Address</th>
-                <th>CPF</th>
-                <th>Date of Birth</th>
-                <th>Actions</th>
+                <th>Date of admission</th>
+                <th>Schedule of start</th>
+                <th>Schedule of end</th>
             </tr>
         </thead>
         <tbody>
             {% for colaborator in colaborators %}
             <tr>
-                <td>{{ colaborator.id }}</td>
+                <td>{{ colaborator.EDV }}</td>
                 <td>{{ colaborator.full_name }}</td>
                 <td>{{ colaborator.responsibillity }}</td>
                 <td>{{ colaborator.sector }}</td>
                 <td>{{ colaborator.address }}</td>
-                <td>{{ colaborator.schedule_work }}</td>
-                <td>{{ colaborator.date_start }}</td>
+                <td>{{ colaborator.date_admission }}</td>
+                <td>{{ colaborator.schedule_start }}</td>
+                <td>{{ colaborator.schedule_end}}</td>
                 <td>
                     <a href="{% url 'colaborators:edit_colaborator' colaborator.id %}" class="btn btn-primary">Edit</a>
                     <a href="{% url 'colaborators:delete_colaborator' colaborator.id %}" class="btn btn-danger">Delete</a>

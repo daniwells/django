@@ -6,31 +6,35 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>CPF</th>
-                <th>Date of Birth</th>
-                <th>Actions</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Weight</th>
+                <th>volts</th>
+                <th>voltage</th>
+                <th>type</th>
+                
             </tr>
         </thead>
         <tbody>
             {% for product in products %}
             <tr>
-                <td>{{ colaborator.id }}</td>
-                <td>{{ colaborator.full_name }}</td>
-                <td>{{ colaborator.responsibillity }}</td>
-                <td>{{ colaborator.sector }}</td>
-                <td>{{ colaborator.address }}</td>
-                <td>{{ colaborator.schedule_work }}</td>
-                <td>{{ colaborator.date_start }}</td>
+                <td>{{ product.id }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.amount }}</td>
+                <td>{{ product.weight }}</td>
+                <td>{{ product.volts }}</td>
+                <td>{{ product.voltage }}</td>
+                <td>{{ product.type }}</td>
                 <td>
-                    <a href="{% url 'colaborators:edit_colaborator' colaborator.id %}" class="btn btn-primary">Edit</a>
-                    <a href="{% url 'colaborators:delete_colaborator' colaborator.id %}" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'products:edit_product' product.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'products:delete_product' product.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'colaborators:register_colaborator' %}" class="btn btn-success">New Colaborator</a>
+    <a href="{% url 'products:register_product' %}" class="btn btn-success">New Product</a>
 </div>
 {% endblock %}
